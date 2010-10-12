@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+require "#{ENV['TM_BUNDLE_SUPPORT']}/posterous.rb"
+
+include Posterous
+
+pp Post.create(File.read(ENV['TM_DIRECTORY'] + '/' + ENV['TM_FILENAME']))  </string>
+	<key>input</key>
+	<string>selection</string>
+	<key>name</key>
+	<string>Get Post</string>
+	<key>output</key>
+	<string>replaceDocument</string>
+	<key>uuid</key>
+	<string>CF071F4C-D684-45B1-A16E-C1E59F6BA220</string>
+</dict>
+</plist>

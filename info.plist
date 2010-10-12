@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Posterous</string>
+	<key>ordering</key>
+	<array>
+		<string>CF071F4C-D684-45B1-A16E-C1E59F6BA220</string>
+		<string>D36B15A6-AF1E-4ECC-982F-81D13FF41A2E</string>
+		<string>9A043860-5618-48CD-AC23-315551448FF0</string>
+		<string>CB04BC2B-F4E5-4A8D-92CB-15804B3A5FE5</string>
+	</array>
+	<key>uuid</key>
+	<string>BFBE205A-06AE-4311-A989-807DCCF150E3</string>
+</dict>
+</plist>

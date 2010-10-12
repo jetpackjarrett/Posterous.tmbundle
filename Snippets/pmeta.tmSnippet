@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>TITLE: ${1:title} &lt;!-- title of post --&gt;
+TAGS: ${2:tags} &lt;!-- tags (comma delimited) --&gt;
+AUTOPOST: ${3:autopost} &lt;!-- autopost (true/false) --&gt;
+DISPLAY_DATE: ${4:display_date} &lt;!-- date/time to display post (any date format) --&gt;</string>
+	<key>name</key>
+	<string>Insert Metadata</string>
+	<key>tabTrigger</key>
+	<string>pmeta</string>
+	<key>uuid</key>
+	<string>CB04BC2B-F4E5-4A8D-92CB-15804B3A5FE5</string>
+</dict>
+</plist>

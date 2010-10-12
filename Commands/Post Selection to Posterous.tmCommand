@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+require "#{ENV['TM_BUNDLE_SUPPORT']}/posterous.rb"
+
+include Posterous
+
+pp Post.create(ENV['TM_SELECTED_TEXT'])  </string>
+	<key>fallbackInput</key>
+	<string>document</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@P</string>
+	<key>name</key>
+	<string>Post Selection to Posterous</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>uuid</key>
+	<string>9A043860-5618-48CD-AC23-315551448FF0</string>
+</dict>
+</plist>
