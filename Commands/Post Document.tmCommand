@@ -10,7 +10,7 @@ require "#{ENV['TM_BUNDLE_SUPPORT']}/posterous.rb"
 
 include Posterous
 
-pp Post.create(File.read(ENV['TM_DIRECTORY'] + '/' + ENV['TM_FILENAME']))  </string>
+pp Post.send(File.read(ENV['TM_DIRECTORY'] + '/' + ENV['TM_FILENAME']))  </string>
 	<key>fallbackInput</key>
 	<string>document</string>
 	<key>input</key>

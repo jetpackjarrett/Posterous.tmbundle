@@ -14,7 +14,11 @@ module Posterous
     base_uri 'https://posterous.com/api/2/users/me'
     
     class << self;
-    
+      
+      def method
+        return @method
+      end
+      
       def default_query
         return {
           :basic_auth => {
@@ -24,9 +28,9 @@ module Posterous
           :query => { :api_token => Posterous.config['api_token'] }
         }
       end
-
+      
       def default_site
-        site = Posterous.config['default_site_id'] ? Posterous.config['default_site_id'].to_s : 'primary'
+        site = Posterous.config['site'] ? Posterous.config['site'].to_s : 'primary'
         return '/' + site
       end
 
@@ -39,13 +43,18 @@ module Posterous
       def post_request(endpoint, query = {})
         params         = self.default_query
         params[:query] = params[:query].merge(query)
+        
+        if (@method)
+          params[:query]['_method'] = @method;
+        end
+        
         return self.post(endpoint, params)
       end
 
       def handle_response(response)
         case response.code
           when 200
-            return 'Post created!'
+            return true
           when 401
             return 'Unauthorized.  Make sure ~/.posterous exists and proper username/password are defined.'
           when 500
@@ -91,7 +100,7 @@ module Posterous
         return parsed.to_options
       end
 
-      def create(params)
+      def send(params)
         if (params.kind_of? String)
           params = self.parse(params)
         end
@@ -103,21 +112,26 @@ module Posterous
           :autopost     => Posterous.config['autopost'] ? Posterous.config['autopost'] : false,
           :display_date => Time.now
         }
+        
         params = defaults.merge(params)
         
         endpoint = '/sites' + self.default_site + '/posts'
-        pp endpoint
-        if (params[:id])
-          pp endpoint + '/' + params[:id]
-        end 
-        exit
-        
-        response = self.post_request(endpoint, {:post => params})
+        if (params[:id]) 
+          @method  = 'put'
+          endpoint = endpoint + '/' + params[:id].to_s
+        end
+
+        response = self.post_request(endpoint, { :post => params })
         if (response.code == 200)
           system('open ' + response['full_url'])
         end
 
-        return self.handle_response(response)
+        handled = self.handle_response(response)
+        if (handled === true)
+          return 'Post Successful'
+        end
+        
+        return handled
       end
 
     self end
