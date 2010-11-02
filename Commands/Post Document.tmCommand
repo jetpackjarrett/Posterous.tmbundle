@@ -20,7 +20,7 @@ pp Post.send(File.read(ENV['TM_DIRECTORY'] + '/' + ENV['TM_FILENAME']))  </strin
 	<key>name</key>
 	<string>Post Document to Posterous</string>
 	<key>output</key>
-	<string>showAsHTML</string>
+	<string>showAsTooltip</string>
 	<key>scope</key>
 	<string>text</string>
 	<key>uuid</key>

@@ -10,9 +10,21 @@ require "#{ENV['TM_BUNDLE_SUPPORT']}/posterous.rb"
 
 include Posterous
 
-pp Post.create(File.read(ENV['TM_DIRECTORY'] + '/' + ENV['TM_FILENAME']))  </string>
+post = Post.get_by_id(ENV['TM_SELECTED_TEXT'])
+
+puts "ID: "           + post['id'].to_s
+puts "TITLE: "        + post['title'].to_s
+puts "TAGS: "         + post['tags'].to_s
+puts "AUTOPOST: "     + post['autopost'].to_s
+puts "DISPLAY_DATE: " + post['display_date'].to_s
+puts ""
+puts post['body_html'].to_s </string>
+	<key>fallbackInput</key>
+	<string>document</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>~@P</string>
 	<key>name</key>
 	<string>Get Post</string>
 	<key>output</key>
