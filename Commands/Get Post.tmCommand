@@ -10,7 +10,7 @@ require "#{ENV['TM_BUNDLE_SUPPORT']}/posterous.rb"
 
 include Posterous
 
-post = Post.get_by_id(ENV['TM_SELECTED_TEXT'])
+post = Post.read(ENV['TM_SELECTED_TEXT'])
 
 puts "ID: "           + post['id'].to_s
 puts "TITLE: "        + post['title'].to_s

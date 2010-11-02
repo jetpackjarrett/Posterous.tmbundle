@@ -100,7 +100,7 @@ module Posterous
         return parsed.to_options
       end
 
-      def send(params)
+      def write(params)
         if (params.kind_of? String)
           params = self.parse(params)
         end
@@ -134,7 +134,7 @@ module Posterous
         return handled
       end
       
-      def get_by_id(id)
+      def read(id)
         endpoint = '/sites' + self.default_site + '/posts/' + id.to_s
         response = self.get_request(endpoint)
         if (response.code == 200)
