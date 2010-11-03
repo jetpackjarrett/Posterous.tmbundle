@@ -71,7 +71,15 @@ module Posterous
   class Post < Posterous::Api
     
     class << self;
-
+      
+      def concat_tags(tags)
+        arr = []
+        tags.each { |tag|
+          arr.push(tag['name'])
+        }
+        return arr.join(', ')
+      end
+      
       def parse(raw)
         allowed   = ['ID', 'TITLE', 'TAGS', 'AUTOPOST', 'DISPLAY_DATE']
         is_option = Regexp.new(/^\w+: \w+/) 

@@ -10,15 +10,14 @@ require "#{ENV['TM_BUNDLE_SUPPORT']}/posterous.rb"
 
 include Posterous
 
-post = Post.read(ENV['TM_SELECTED_TEXT'])
+blog_post = Post.read(ENV['TM_SELECTED_TEXT'])
 
-puts "ID: "           + post['id'].to_s
-puts "TITLE: "        + post['title'].to_s
-puts "TAGS: "         + post['tags'].to_s
-puts "AUTOPOST: "     + post['autopost'].to_s
-puts "DISPLAY_DATE: " + post['display_date'].to_s
+puts "ID: "           + blog_post['id'].to_s
+puts "TITLE: "        + blog_post['title'].to_s
+puts "TAGS: "         + Post.concat_tags(blog_post['tags'])
+puts "DISPLAY_DATE: " + blog_post['display_date'].to_s
 puts ""
-puts post['body_html'].to_s </string>
+puts blog_post['body_html'].to_s </string>
 	<key>fallbackInput</key>
 	<string>document</string>
 	<key>input</key>
