@@ -9,6 +9,10 @@ Install the bundle by checking out the git repo to your Bundles directory:
 
     $ git clone git@github.com:jarrettgossett/Posterous.tmbundle.git ~/Library/Application\ Support\Textmate/Bundles/
 
+This bundle relies on the ruby gem HTTParty: http://httparty.rubyforge.org/. To install it:
+
+    $ sudo gem install httparty
+
 Or you can download/checkout the repo and double-click on the tmbundle file which should load it as a bundle in Textmate automatically.
 
 
